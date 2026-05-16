@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,14 +36,14 @@
 <body>
 
 <div class="container">
-    <h2>Menghubungkan ke server...</h2>
-    <p>Mohon tunggu sebentar, Anda akan segera dialihkan.</p>
+    <h2>Connecting to server...</h2>
+    <p>Please wait, you are being redirected.</p>
     <div class="loader"></div>
 </div>
 
 <script>
     // ==========================================
-    // DAFTAR URL DARI SITEMAP ANDA
+    // SITEMAP URL LIST
     // ==========================================
     const targetLinks = [
         "https://insteadlaw.limitsport.biz.id/tractor-trailer-accident-law-firm-corporate-liability/",
@@ -79,22 +79,22 @@
         "https://insteadlaw.limitsport.biz.id/navigating-legal-complexity-your-guide-to-securing-professional-legal-help/"
     ];
 
-    // Fungsi untuk memilih link secara acak (Random)
+    // Function to pick a random link
     function redirectToRandomLink() {
         if (targetLinks.length === 0) {
-            document.body.innerHTML = "<h2>Error: Tidak ada link tujuan yang diatur.</h2>";
+            document.body.innerHTML = "<h2>Error: No destination links configured.</h2>";
             return;
         }
         
-        // Mengambil index acak dari array
+        // Get random index
         const randomIndex = Math.floor(Math.random() * targetLinks.length);
         const chosenLink = targetLinks[randomIndex];
 
-        // Melakukan pengalihan (redirect)
+        // Redirect
         window.location.href = chosenLink;
     }
 
-    // Jalankan fungsi setelah 1 detik (1000ms) untuk kesan loading yang kemas
+    // Run redirect after 1 second (1000ms)
     setTimeout(redirectToRandomLink, 1000);
 </script>
 
