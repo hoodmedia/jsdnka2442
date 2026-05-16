@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Menghubungkan ke server...</h2>
+    <p>Mohon tunggu sebentar, Anda akan segera dialihkan.</p>
+    <div class="loader"></div>
+</div>
+
+<script>
+    // ==========================================
+    // MASUKKAN DAFTAR LINK KAMU DI SINI
+    // ==========================================
+    const targetLinks = [
+        "https://link-tujuan-pertama.com",
+        "https://link-tujuan-kedua.com",
+        "https://link-tujuan-ketiga.com"
+    ];
+
+    // Fungsi untuk memilih link secara acak (Random)
+    function redirectToRandomLink() {
+        if (targetLinks.length === 0) {
+            document.body.innerHTML = "<h2>Error: Tidak ada link tujuan yang diatur.</h2>";
+            return;
+        }
+        
+        // Mengambil index acak dari array
+        const randomIndex = Math.floor(Math.random() * targetLinks.length);
+        const chosenLink = targetLinks[randomIndex];
+
+        // Melakukan pengalihan (redirect)
+        window.location.href = chosenLink;
+    }
+
+    // Jalankan fungsi setelah 1.5 detik (agar animasi loading terlihat halus)
+    setTimeout(redirectToRandomLink, 1500);
+</script>
+
+</body>
+</html>
